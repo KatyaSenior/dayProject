@@ -17,6 +17,7 @@ export default function Home() {
       <p>The current date and time are: {now.format("DD/MM/YYYY HH:mm:ss")}</p>
       <p>The current time in a 12 hour format is: {now.format("hh:mma")}</p>
       <p>This p tag was totally made {dayjs().to(dayjs("1990-01-01"))}.</p>
+      <p>Hello</p>
       {/* <p>
         This p tag was made on:{" "}
         {staticTime({ years: 1990, months: 0, date: 1 })}
