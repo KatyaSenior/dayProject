@@ -12,12 +12,12 @@ export default function NewPostsPage() {
     const now = dayjs();
 
     await sql`INSERT INTO timedPosts (title, content, time) VALUES (${title}, ${content}, ${now.format(
-      "DD/MM/YYYY"
+      "YYYY/MM/DD HH:mm"
     )})`;
     console.log("Post saved!");
-    revalidatePath("/app");
+    revalidatePath("/posts");
     console.log("Post saved!");
-    redirect("/");
+    redirect("/posts");
   }
   return (
     <form action={handleSavePost}>
