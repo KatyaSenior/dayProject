@@ -2,9 +2,11 @@ import { sql } from "@vercel/postgres";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Button from "../components/Button";
+import { revalidatePath } from "next/cache";
 dayjs.extend(relativeTime);
 
 export default async function Posts() {
+  revalidatePath("/posts");
   const timedPosts = await sql`SELECT*FROM timedPosts`;
 
   return (
